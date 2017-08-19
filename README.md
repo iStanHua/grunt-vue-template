@@ -1,4 +1,4 @@
-#grunt-vue-template
+# grunt-vue-template
 
 > grunt + vue + require + less
 
