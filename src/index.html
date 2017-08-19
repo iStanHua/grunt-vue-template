@@ -1,0 +1,33 @@
+@% extend('layout.art') %@
+<!--title-->
+@% block('title', function(){ %@首页@% }) %@
+<!--head-->
+@% block('head', function(){ %@
+<!--build:css /assets/css/app/index.css-->
+<link rel="stylesheet" type="text/css" href="/assets/css/app/index.css" />
+<!--endbuild-->
+@% }) %@
+<!--content-->
+@% block('content', function(){ %@
+<div class="loading" v-if="loading">
+    <div class="loading-spinner"></div>
+</div>
+<div class="content">
+    <div class="logo"><img src="/assets/images/app/logo.png" /></div>
+    <div class="section">
+        <div class="listview">
+            <a v-for="json in list" v-bind:class="{item:true,active:json.code == code}" v-on:click="select(json)">
+                <span v-text="json.name"></span>   
+            </a>
+        </div>
+    </div>
+</div>
+@% include('footer.art', {active:0}) %@ @% }) %@
+<!--js-->
+@% block('js', function(){ %@
+<!--build:js /assets/js/app/index.js-->
+<script type="text/javascript" src="/assets/js/lib/require.js"></script>
+<script type="text/javascript" src="/assets/js/common/config.js"></script>
+<script type="text/javascript" src="/assets/js/app/index.js"></script>
+<!--endbuild-->
+@% }) %@

@@ -1,0 +1,57 @@
+.content {
+  padding-bottom: 1.08rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  .gridview {
+    padding: .13rem 0 .1rem;
+    background-color: #fff;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      .horizontal-1px(#ccc);
+    }
+  }
+
+  .item {
+    width: 20%;
+    text-align: center;
+
+    .icon {
+      display: block;
+      padding: .1rem 0 .13rem;
+      color: #9d9d9d;
+    }
+
+    span {
+      display: block;
+      line-height: .24rem;
+      font-size: .2rem;
+      color: #888;
+    }
+
+    &.active {
+      .icon {
+        color: @baseColor;
+        .linear-gradient(top ,#8fb853,#b1d182);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      span {
+        color: @baseColor;
+      }
+    }
+  }
+}

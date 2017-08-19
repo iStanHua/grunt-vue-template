@@ -1,0 +1,24 @@
+<div class="footer">
+    <div class="gridview">
+        <a class="item@% if(active==0) {%@ active@%}%@" @% if(active!=0) {%@ href="/" @%}%@>
+            <i class="icon i-home"></i>
+            <span>首页</span>
+        </a>
+        <a class="item@% if(active==1) {%@ active@%}%@" @% if(active!=1) {%@ href="/" @%}%@>
+            <i class="icon i-sale"></i>
+            <span>售楼</span>
+        </a>
+        <a class="item@% if(active==2) {%@ active@%}%@" @% if(active!=2) {%@ href="/" @%}%@>
+            <i class="icon i-lease"></i>
+            <span>租赁</span>
+        </a>
+        <a class="item@% if(active==3) {%@ active@%}%@" @% if(active!=3) {%@ href="/" @%}%@>
+            <i class="icon i-hotel"></i>
+            <span>酒店</span>
+        </a>
+        <a class="item@% if(active==4) {%@ active@%}%@" @% if(active!=4) {%@ href="/" @%}%@>
+            <i class="icon i-my"></i>
+            <span>我的</span>
+        </a>
+    </div>
+</div>

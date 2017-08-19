@@ -1,0 +1,161 @@
+/*listview模块*/
+.listview {
+  position: relative;
+  background-color: #fff;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: @borderColor;
+    .transform(scaleY(.5));
+    .transform-origin(0 0);
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: -.01rem;
+  }
+
+  .item {
+    padding: .33rem .3rem;
+    min-height: .34rem;
+    line-height: .34rem;
+    font-size: .34rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: .3rem;
+      right: 0;
+      height: 1px;
+      background-color: @borderColor;
+      .transform(scaleY(.5));
+      .transform-origin(0 0);
+    }
+
+    &:first-child {
+      &:before {
+        width: 0;
+      }
+    }
+  }
+
+  .pos-left {
+    top: .33rem;
+    left: .3rem;
+  }
+
+  .pos-right {
+    top: .31rem;
+    right: .3rem;
+
+    span {
+      font-size: .3rem;
+      color: @grayColor;
+      vertical-align: middle;
+    }
+  }
+
+  .input {
+    width: 100%;
+    font-size: .3rem;
+    text-align: right;
+    border-width: 0;
+  }
+}
+
+.listicon {
+  .item {
+    padding-left: .99rem;
+  }
+}
+
+.form-box {
+  margin-top: .4rem;
+
+  .item {
+    padding-left: 2rem;
+    font-size: .3rem;
+
+    &:before {
+      right: .3rem;
+    }
+  }
+
+  .input {
+    color: @grayColor;
+  }
+
+  input[type=datetime-local] {
+    height: .34rem;
+    background-color: transparent;
+  }
+
+  .select-item {
+    padding-right: .62rem;
+  }
+
+  .area-item {
+    padding-left: .3rem;
+
+    .input {
+      width: 100%;
+      height: 1.8rem;
+      line-height: .38rem;
+      text-align: left;
+      resize: none;
+    }
+  }
+
+  .other-item {
+    padding-top: .21rem;
+    padding-bottom: .21rem;
+  }
+
+  .input-box {
+    min-height: .34rem;
+    text-align: right;
+
+    span {
+      color: @grayColor;
+    }
+  }
+
+  div.input {
+    line-height: .34rem;
+  }
+
+  .radio {
+    display: inline-block;
+    padding: .15rem .32rem;
+    margin-left: .38rem;
+    line-height: .26rem;
+    font-size: .28rem;
+    color: #aaa;
+    border: .01rem solid #a9a9a9;
+    border-radius: @radius*2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.selected {
+      color: #fff;
+      background-color: @baseColor;
+      border-color: @baseColor;
+    }
+  }
+
+  .form-btn {
+    padding: .4rem .3rem;
+  }
+
+}
