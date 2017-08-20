@@ -195,6 +195,19 @@ module.exports = function (grunt) {
             },
             css: ['<%= pkg.config.dev%>/assets/css/**/*.css'],
             html: ['<%= pkg.config.dev%>/**/*.html']
+        },
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseWhitespace: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= pkg.config.build%>',
+                    src: ['**/*.html'],
+                    dest: '<%= pkg.config.build%>'
+                }]
+            }
         }
     });
 
@@ -235,6 +248,7 @@ module.exports = function (grunt) {
                 'copy:buildjs',
                 'clean:tmp',
                 'cssmin:build',
+                'htmlmin',
                 'clean:dev',
                 'connect:build'
             ]);
