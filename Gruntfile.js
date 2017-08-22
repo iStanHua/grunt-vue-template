@@ -3,7 +3,7 @@
 module.exports = function (grunt) {
     var _portConfig = {
         dev: 9090,
-        build: 8888
+        build: 9999
     }
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -154,6 +154,19 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        prettify: {
+            options: {
+                config: '.jsbeautifyrc'
+            },
+            html: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= pkg.config.dev%>',
+                    src: ['**/*.html', '!template/**/*.html'],
+                    dest: '<%= pkg.config.dev%>'
+                }]
+            }
+        },
         useminPrepare: {
             options: {
                 root: '<%= pkg.config.tmp%>',
@@ -224,6 +237,7 @@ module.exports = function (grunt) {
                 'copy:js',
                 'copy:dest',
                 'template',
+                'prettify',
                 'useminPrepare',
                 'concat',
                 'filerev',
